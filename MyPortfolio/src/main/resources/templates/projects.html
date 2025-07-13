@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Venkatesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</head>
+<header class="fixed top-0 w-full z-50 bg-indigo-900 bg-opacity-90 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 text-white font-bold text-xl">Venkatesh</div>
+      <nav class="space-x-4 hidden md:block">
+        <a href="/" class="text-white hover:text-blue-300 transition">Home</a>
+        <a href="/about" class="text-white hover:text-blue-300 transition">About</a>
+        <a href="/projects" class="text-white hover:text-blue-300 transition">Projects</a>
+        <a href="#contact" class="text-white hover:text-blue-300 transition">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="h-16"></div> <!-- Spacer so content doesn't go under navbar -->
+
+<body class="bg-gradient-to-tr from-purple-900 to-indigo-700 text-white">
+
+    <!-- Header -->
+    <section class="text-center py-12">
+        <h1 class="text-4xl font-bold mb-4" data-aos="fade-down">My Projects</h1>
+        <p class="text-lg text-gray-200" data-aos="fade-up">A collection of my best work so far</p>
+    </section>
+
+    <!-- Projects Grid -->
+    <div class="max-w-6xl mx-auto px-6 pb-16 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition" 
+             th:each="project : ${projects}" data-aos="zoom-in">
+            <h2 class="text-2xl font-semibold mb-2" th:text="${project.name}">Project Title</h2>
+            <p class="text-sm mb-4" th:text="${project.description}">Project description goes here.</p>
+            <p class="text-xs text-gray-600 mb-4">
+                <span class="font-semibold">Tech Stack:</span>
+                <span th:text="${project.techStack}">Java, Spring Boot</span>
+            </p>
+            <a class="text-blue-600 hover:underline text-sm font-medium" 
+               th:href="${project.projectUrl}" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-indigo-800 text-sm">
+        &copy; 2025 Ponnapula Venkatesh. All rights reserved.
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    
+</body>
+</html>

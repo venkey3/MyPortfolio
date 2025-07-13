@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">Venkatesh Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body class="bg-gradient-to-tr from-indigo-900 to-blue-600 text-white">
+
+    <!-- Navbar -->
+    <header th:replace="fragments/navbar :: navbar"></header>
+
+    <!-- Dynamic content -->
+    <main th:fragment="content">
+        <!-- Page-specific content here -->
+    </main>
+
+    <!-- Footer -->
+    <footer th:replace="fragments/footer :: footer"></footer>
+
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>

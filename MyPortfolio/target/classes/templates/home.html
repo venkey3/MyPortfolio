@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Venkatesh Portfolio</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<header class="fixed top-0 w-full z-50 bg-indigo-900 bg-opacity-90 backdrop-blur-sm shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 text-white font-bold text-xl">Venkatesh</div>
+      <nav class="space-x-4 hidden md:block">
+        <a href="/" class="text-white hover:text-blue-300 transition">Home</a>
+        <a href="/about" class="text-white hover:text-blue-300 transition">About</a>
+        <a href="/projects" class="text-white hover:text-blue-300 transition">Projects</a>
+        <a href="#contact" class="text-white hover:text-blue-300 transition">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="h-16"></div> <!-- Spacer so content doesn't go under navbar -->
+
+<body class="bg-gradient-to-tr from-indigo-900 to-blue-500 text-white font-sans">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6" id="hero">
+        <h1 class="text-5xl font-extrabold mb-4" data-aos="fade-down" th:text="${name}">Ponnapula Venkatesh</h1>
+        <p class="text-xl font-medium mb-6" data-aos="fade-up" th:text="${title}">Java Developer | Spring Boot Enthusiast</p>
+        <div class="flex gap-4" data-aos="zoom-in">
+            <a href="/projects" class="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-blue-100 transition">View Projects</a>
+            <a href="/about" class="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-blue-600 transition">About Me</a>
+           <a href="/files/Ponnapula_Venkatesh_Software-Engineer-Resume.pdf" download
+   class="bg-green-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-400 transition">
+  📄 Download Resume
+</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-indigo-800">
+        <p class="text-sm">&copy; 2025 Ponnapula Venkatesh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    
+    <section id="contact" class="bg-indigo-800 text-white py-16 px-6" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+    <p class="mb-4 text-lg">I'm open to work and collaboration opportunities. Reach me via:</p>
+
+    <div class="space-y-4 text-left text-white text-lg">
+      <p><strong>Email:</strong> <a href="mailto:venkatesh.yourmail@example.com" class="text-blue-300 hover:underline">venkatesh.yourmail@example.com</a></p>
+      <p><strong>Phone:</strong> <span class="text-blue-300">+91 98765 43210</span></p>
+      <p><strong>Location:</strong> <span class="text-blue-300">Hyderabad, India</span></p>
+    </div>
+
+    <div class="flex justify-center gap-6 mt-6 text-2xl">
+      <a href="https://github.com/venkatesh-ponnapula" target="_blank" class="hover:text-blue-400 transition">🐱 GitHub</a>
+      <a href="https://linkedin.com/in/venkatesh-ponnapula" target="_blank" class="hover:text-blue-400 transition">💼 LinkedIn</a>
+    </div>
+  </div>
+</section>
+    
+</body>
+</html>
